@@ -1,0 +1,73 @@
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch1;
+///Result: pSphere1 polySphere1 //
+doDelete;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch1;
+//Result: pSphere1 polySphere1 //
+polySphere -r 3;
+//Result: pSphere2 polySphere2 //
+polySphere -r 5;
+//Result: pSphere3 polySphere3 //
+select -r pSphere2;
+move -r 0 6.307108 0; 
+select -r pSphere1;
+move -r 0 3.628627 0;
+move -r 0 5.287277 0;
+move -r 0 0.93083 0; 
+select -r pSphere1;
+scale -r 1.636387 1.636387 1.636387
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch1;
+//Result: pSphere4 polySphere4 // 
+select -r pSphere4;
+move -r 0 0 7.080638;
+scale -r 0.206418 0.206418 0.206418;
+move -r 0 10.231529 0;
+move -r 0 0  -5.505623;
+select -r pSphere4;
+copy -r pSphere4;
+//Error: line 1:Cannot find procedure "copy". //
+duplicate -rr;
+//Result: pSphere5 //
+select -r pSphere5;
+move -r 1.243333 0 0;
+move -r 0 0 -0.693521;
+polyCone -r -h 2 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rep 0 -cuv 3 -ch 1;
+//Result: pCone1 polyCone1 //
+select -r pCone1;
+move -r 0 0 8.34444;
+scale -r 0.346492 0.346492 0.346492;
+scale -r 1 4.824205 1; 
+move -r 0 9.637907 0; 
+move -r 0 0 -7.191557;
+rotate -r -os -fo 102.779126 0 0;
+rotate -r -os -fo 0 0 -50.402325;
+move -r 0 0 0.45417;
+move -r 0.953234 0 0;
+select -cl;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1; 
+//Result: pSphere6 polySphere5 //
+select -r pSphere6;
+move -r 0 0 9.991299;
+scale -r 2.026903 2.026903 2.026903;
+scale -r 4; 
+scale -r 4 5 4;
+scale -r 2 3 2;
+scale -r 3;
+doDelete;
+polySphere -r 3;
+//Result: pSphere6 polySphere5 //
+Select -r pSphere6;
+//Error: line 1: Cannot find procedure "Select". //
+select -r pSphere6;
+move -r 0 0 9.991299;
+scale -r 1 0.221325 1; 
+move -r 0 11.766931 0;
+move -r 0 0 -10.035467;
+scale -r 1 0.460102 1; 
+move -r 0 -0.580398 0; 
+polySphere -r 2;
+//Result: pSphere7 polySphere 6 //
+select -r pSphere7;
+move -r 0 12.698789 0;
+scale -r 0.52326 0.52326 0.52326;
+move -r 0 -1.176512 0;
+select -cl;
