@@ -1,0 +1,71 @@
+polySphere -r 5;
+polySphere -r 3;
+polySphere -r 2;
+polySphere -r 0.1;
+polySphere -r 0.1;
+polyCone -r 0.1;
+polySphere -r 3;
+polySphere -r 2;
+// Result: pSphere7 polySphere7 // 
+select -r pSphere2 ;
+move -r 0 5.662774 0 ;
+select -r pSphere3 ;
+move -r 0 9.330614 0 ;
+select -r pSphere4 ;
+move -r 0 9.556609 0 ;
+move -r 0 0 2.026218 ;
+move -r -0.620231 0 0 ;
+move -r 0 0 -0.141758 ;
+move -r -0.24813 0 0 ;
+move -r 0 0 -0.1194 ;
+select -r pSphere5 ;
+move -r 0 9.343211 0 ;
+move -r 0 0 2.066323 ;
+move -r 0.732015 0 0 ;
+move -r 0.322357 0 0 ;
+move -r 0 0 -0.387909 ;
+move -r 0 0 -0.00441158 ;
+move -r 0 0.165461 0 ;
+select -r pCone1 ;
+move -r 0 9.129749 0 ;
+move -r 0 0 2.437906 ;
+move -r 0 1.12947 0 ;
+rotate -r -os -fo 88.08292 0 0 ;
+move -r 0 -0.91341 0 ;
+select -r pSphere6 ;
+move -r 0 12.594919 0 ;
+scale -r 1 0.111964 1 ;
+move -r 0 -2.278299 0 ;
+select -r pSphere7 ;
+move -r 0 10.663245 0 ;
+move -r 0 0.477224 0 ;
+select -cl  ;
+select -r pSphere1 ;
+rename "pSphere1" "pSphere1_Geo";
+// Result: pSphere1_Geo // 
+select -r pSphere2 ;
+select -r pSphere2 ;
+rename "pSphere2" "pSphere2_Geo";
+// Result: pSphere2_Geo // 
+select -r pSphere3 ;
+select -r pSphere3 ;
+rename "pSphere3" "pSphere3_Geo";
+// Result: pSphere3_Geo // 
+select -r pSphere4 ;
+rename "pSphere4" "pSphere4_Geo";
+// Result: pSphere4_Geo // 
+select -r pSphere5 ;
+select -r pSphere5 ;
+rename "pSphere5" "pSphere5_Geo";
+// Result: pSphere5_Geo // 
+select -r pCone1 ;
+rename "pCone1" "pCone1_Geo";
+// Result: pCone1_Geo // 
+select -r pSphere6 ;
+select -r pSphere6 ;
+rename "pSphere6" "pSphere6_Geo";
+// Result: pSphere6_Geo // 
+select -r pSphere7 ;
+select -r pSphere7 ;
+rename "pSphere7" "pSphere7_Geo";
+// Result: pSphere7_Geo // 
