@@ -1,0 +1,767 @@
+//Creating a simple model and rename the objects using MEL. 
+file -f -new;
+// untitled // 
+commandPort -securityWarning -name commandportDefault;
+onSetCurrentLayout "Modeling - Standard";
+// Warning: file: C:/Program Files/Autodesk/Maya2019/scripts/others/supportRenderers.mel line 67: The renderer "arnold" used by this scene, is not currently available. The "mayaSoftware" renderer will be used instead. To prevent this message from being displayed in the future, set the environment variable: MAYA_NO_WARNING_FOR_MISSING_DEFAULT_RENDERER=1 // 
+CreatePolygonSphere; //Create a Head;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere1 // 
+move -r 0 10.505205 0 ;
+select -r pSphere1 ;
+rename "pSphere1" "Head_Geo";
+// Result: Head_Geo // 
+CreatePolygonSphere; //Create a Torso;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere2 // 
+select pSphere1;
+scale -r 3;
+move -r 0 7.641645 0 ;
+move -r -0.0403079 0 0 ;
+CreatePolygonSphere;//Create a neck;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere2 polySphere3 // 
+select pSphere2;
+scale -r 1;
+move -r 0 9.018009 0 ;
+scale -r 0.860909 0.860909 0.860909 ;
+select -r pSphere1 ;
+select -r pSphere1 ;
+rename "pSphere1" "Torso_Geo";
+// Result: Torso_Geo // 
+select -r pSphere2 ;
+select -r pSphere2 ;
+rename "pSphere2" "Neck_Geo";
+// Result: Neck_Geo // 
+CreatePolygonCube;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube1 // 
+scale -r 1 4.47296 1 ;
+scale -r 3.904822 1 1 ;
+scale -r 1 0.857704 1 ;
+scale -r 1 1 0.7074 ;
+move -r 0 5.269645 0 ;
+select -r pCube1 ;
+rename "pCube1" "Stomach_Geo";
+// Result: Stomach_Geo // 
+select -r Head_Geo ;
+CreatePolygonSphere; //Create a shoulder;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere4 // 
+move -r 0 7.652116 0 ;
+move -r -2.604332 0 0 ;
+duplicate -rr;
+// Result: pSphere2 //
+move -r 5.223975 0 0 ;
+CreatePolygonCube;//Create two arms;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube2 // 
+move -r 0 6.26546 0 ;
+move -r -2.731847 0 0 ;
+scale -r 0.553295 0.553295 0.553295 ;
+scale -r 1 3.188958 1 ;
+move -r 0 -0.262915 0 ;
+scale -r 1 1.596988 1 ;
+move -r 0 -0.406878 0 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r 5.488602 0 0 ;
+select -r pCube1 ;
+rename "pCube1" "R_Arm_01_Geo";
+// Result: R_Arm_01_Geo // 
+select -r pCube2 ;
+rename "pCube2" "L_Arm_02_Geo";
+// Result: L_Arm_02_Geo // 
+CreatePolygonSphere;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere3 polySphere5 // 
+move -r 0 4.306754 0 ;
+move -r -2.868945 0 0 ;
+scale -r 0.640104 0.640104 0.640104 ;
+move -r 0.0778592 0 0 ;
+duplicate -rr;
+// Result: pSphere4 //
+move -r 5.542266 0 0 ;
+select -r R_Arm_01_Geo ;
+duplicate -rr;
+// Result: R_Arm_01_Geo1 //
+move -r 0 -3.037058 0 ;
+select -r L_Arm_02_Geo ;
+duplicate -rr;
+// Result: L_Arm_02_Geo1 //
+move -r 0 -3.098208 0 ;
+doDelete;
+select -r R_Arm_01_Geo1 ;
+duplicate -rr;
+// Result: R_Arm_01_Geo2 //
+move -r 5.50731 0 0 ;
+select -r pSphere3 ;
+duplicate -rr;
+// Result: pSphere5 //
+move -r 0 -3.383439 0 ;
+select -r pSphere4 ;
+duplicate -rr;
+// Result: pSphere6 //
+move -r 0 -3.138637 0 ;
+doDelete;
+select -r pSphere5 ;
+duplicate -rr;
+// Result: pSphere6 //
+move -r 5.540731 0 0 ;
+select -r R_Arm_01_Geo ;
+select -r pSphere3 ;
+select -r pSphere3 ;
+rename "pSphere3" "R_Arm_03_Geo";
+// Result: R_Arm_03_Geo // 
+select -r R_Arm_01_Geo1 ;
+select -r pSphere1 ;
+select -r pSphere1 ;
+rename "pSphere1" "R_Shoulder_Geo";
+// Result: R_Shoulder_Geo // 
+select -r R_Arm_01_Geo ;
+select -r R_Arm_03_Geo ;
+select -r R_Arm_03_Geo ;
+rename "R_Arm_03_Geo" "R_Arm_02_Geo";
+// Result: R_Arm_02_Geo // 
+select -r R_Arm_01_Geo1 ;
+select -r R_Arm_01_Geo1 ;
+rename "R_Arm_01_Geo1" "R_Arm_03_Geo";
+// Result: R_Arm_03_Geo // 
+select -r pSphere5 ;
+select -r pSphere5 ;
+rename "pSphere5" "R_Arm_04_Geo";
+// Result: R_Arm_04_Geo // 
+select -r R_Arm_01_Geo2 ;
+select -r pSphere2 ;
+select -r pSphere2 ;
+rename "pSphere2" "L_Shoulder_Geo";
+// Result: L_Shoulder_Geo // 
+select -r L_Arm_02_Geo ;
+select -r L_Arm_02_Geo ;
+rename "L_Arm_02_Geo" "L_Arm_01_Geo";
+// Result: L_Arm_01_Geo // 
+select -r pSphere4 ;
+select -r pSphere4 ;
+rename "pSphere4" "L_Arm_02_Geo";
+// Result: L_Arm_02_Geo // 
+select -r R_Arm_01_Geo2 ;
+select -r R_Arm_01_Geo2 ;
+rename "R_Arm_01_Geo2" "R_Arm_03_Geo";
+// Result: R_Arm_03_Geo1 // 
+select -r R_Arm_03_Geo1 ;
+rename "R_Arm_03_Geo1" "R_Arm_04_Geo";
+// Result: R_Arm_04_Geo1 // 
+select -r R_Arm_04_Geo1 ;
+rename "R_Arm_04_Geo1" "L_Arm_03_Geo";
+// Result: L_Arm_03_Geo // 
+select -r pSphere6 ;
+select -r pSphere6 ;
+rename "pSphere6" "L_Arm_05_Geo";
+// Result: L_Arm_05_Geo // 
+select -r L_Shoulder_Geo ;
+select -r L_Arm_01_Geo ;
+select -r L_Arm_02_Geo ;
+select -r L_Arm_03_Geo ;
+select -r L_Arm_05_Geo ;
+select -r L_Arm_05_Geo ;
+rename "L_Arm_05_Geo" "L_Arm_04_Geo";
+// Result: L_Arm_04_Geo // 
+select -r L_Shoulder_Geo ;
+select -r L_Arm_01_Geo ;
+select -r L_Arm_02_Geo ;
+select -r L_Arm_03_Geo ;
+select -r L_Arm_04_Geo ;
+select -r R_Shoulder_Geo ;
+select -r R_Arm_01_Geo ;
+select -r R_Arm_02_Geo ;
+select -r R_Arm_03_Geo ;
+select -r R_Arm_04_Geo ;
+select -r Stomach_Geo ;
+select -r Torso_Geo ;
+duplicate -rr;
+// Result: Torso_Geo1 //
+move -r 0 -4.715468 0 ;
+select -r Torso_Geo1 ;
+rename "Torso_Geo1" "Bottom_Geo";
+// Result: Bottom_Geo // 
+select -r L_Arm_01_Geo ;
+select -r Torso_Geo ;
+select -r Bottom_Geo ;
+scale -r 0.712091 1 1 ;
+select -cl  ;
+select -r Neck_Geo ;
+duplicate -rr;
+// Result: Neck_Geo1 //
+move -r 0 -7.085618 0 ;
+move -r -1.247231 0 0 ;
+move -r 0 0.182164 0 ;
+duplicate -rr;
+// Result: Neck_Geo2 //
+move -r 2.513694 0 0 ;
+select -r Torso_Geo Head_Geo L_Shoulder_Geo R_Shoulder_Geo Neck_Geo2 Bottom_Geo L_Arm_04_Geo Neck_Geo1 R_Arm_03_Geo L_Arm_02_Geo R_Arm_02_Geo L_Arm_01_Geo R_Arm_01_Geo R_Arm_04_Geo L_Arm_03_Geo Neck_Geo Stomach_Geo ;
+move -r 0 8.618941 0 ;
+select -cl  ;
+select -r Neck_Geo1 ;
+select -r Neck_Geo1 ;
+rename "Neck_Geo1" "R_Leg_01_Geo";
+// Result: R_Leg_01_Geo // 
+select -r Neck_Geo2 ;
+rename "Neck_Geo2" "L_Leg_02_Geo";
+// Result: L_Leg_02_Geo // 
+CreatePolygonCube;//Create two legs;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube3 // 
+move -r 0 9.047479 0 ;
+move -r -1.336068 0 0 ;
+move -r 0 0.609024 0 ;
+scale -r 1 5.494708 1 ;
+scale -r 1 0.621733 1 ;
+move -r 0 -0.811487 0 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r 2.611058 0 0 ;
+select -r pCube1 ;
+rename "pCube1" "R_Leg_02_Geo";
+// Result: R_Leg_02_Geo // 
+select -r pCube2 ;
+select -r pCube2 ;
+rename "pCube2" "L_Leg_02_Geo";
+// Result: L_Leg_02_Geo1 // 
+select -r L_Leg_02_Geo ;
+select -r L_Leg_02_Geo ;
+rename "L_Leg_02_Geo" "L_Leg_01_Geo";
+// Result: L_Leg_01_Geo // 
+select -r L_Leg_02_Geo1 ;
+select -r L_Leg_02_Geo1 ;
+rename "L_Leg_02_Geo1" "L_Leg_02_Geo";
+// Result: L_Leg_02_Geo // 
+select -r L_Leg_01_Geo ;
+duplicate -rr;
+// Result: L_Leg_01_Geo1 //
+move -r 0 -3.782582 0 ;
+duplicate -rr;
+// Result: L_Leg_01_Geo2 //
+move -r -2.67802 0 0 ;
+doDelete;
+select -r L_Leg_01_Geo1 ;
+duplicate -rr;
+// Result: L_Leg_01_Geo2 //
+move -r -2.741228 0 0 ;
+move -r 0.111732 0 0 ;
+select -r L_Leg_01_Geo1 ;
+select -r L_Leg_01_Geo1 ;
+rename "L_Leg_01_Geo1" "L_Leg_03_Geo";
+// Result: L_Leg_03_Geo // 
+select -r L_Leg_01_Geo2 ;
+select -r L_Leg_01_Geo2 ;
+rename "L_Leg_01_Geo2" "R_Leg_0";
+// Result: R_Leg_0 // 
+select -r R_Leg_0 ;
+rename "R_Leg_0" "R_Leg_03_Geo";
+// Result: R_Leg_03_Geo // 
+select -r L_Leg_02_Geo ;
+CreatePolygonCube;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube4 // 
+move -r 0 4.599943 0 ;
+scale -r 0.716717 0.716717 0.716717 ;
+scale -r 1.247032 1.247032 1.247032 ;
+scale -r 1 4.144445 1 ;
+move -r 1.257318 0 0 ;
+scale -r 1 1.2 1 ;
+move -r 0 -0.306663 0 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r -2.606634 0 0 ;
+select -r pCube1 ;
+select -r pCube1 ;
+rename "pCube1" "L_Leg_04_Geo";
+// Result: L_Leg_04_Geo // 
+select -r pCube2 ;
+select -r pCube2 ;
+rename "pCube2" "R_Leg_04_Geo";
+// Result: R_Leg_04_Geo // 
+select -r L_Leg_03_Geo ;
+CreatePolygonSphere;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere6 // 
+move -r 0 2.054641 0 ;
+scale -r 0.575076 0.575076 0.575076 ;
+move -r 1.226651 0 0 ;
+scale -r 1.184725 1.184725 1.184725 ;
+duplicate -rr;
+// Result: pSphere2 //
+move -r -2.575968 0 0 ;
+select -r pSphere1 ;
+move -r 0.0306663 0 0 ;
+select -r pSphere1 ;
+rename "pSphere1" "L_Leg_05_Geo";
+// Result: L_Leg_05_Geo // 
+select -r pSphere2 ;
+select -r pSphere2 ;
+rename "pSphere2" "R_Leg_05_Geo";
+// Result: R_Leg_05_Geo // 
+select -cl  ;
+CreatePolygonCube; //Create a feet;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube5 // 
+move -r 0 2.023975 0 ;
+move -r 1.257318 0 0 ;
+scale -r 1.444444 1 1 ;
+SnapToCurveRelease; dR_enterForSnap;
+move -r 0 0 1.209401 ;
+move -r 0 -0.147415 0 ;
+select -r pCube1.e[1] ;
+move -r 0 -0.681386 0 ;
+CreatePolygonCube; //Create the toes;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube2 polyCube6 // 
+move -r 1.515872 0 0 ;
+select -cl  ;
+select -r pCube1 ;
+move -r 0 0 0.0932692 ;
+// Undo: move -r 0 0 0.0932692  // 
+select -r pCube2 ;
+move -r 0 1.841019 0 ;
+move -r 0 0 2.217329 ;
+move -r 0 0.0407597 0 ;
+select -r pCube2.f[1] ;
+move -r 0 -0.692915 0 ;
+select -d pCube2.f[1] ;
+move -r 0 0 0.0407597 ;
+select -add pCube2.f[1] ;
+select -r pCube2.f[5] ;
+move -r -0.481669 0 0 ;
+select -d pCube2.f[5] ;
+select -r pCube2.e[5] ;
+move -r -0.767364 0 0 ;
+// Undo: move -r -0.767364 0 0  // 
+select -cl  ;
+select -r pCube1 ;
+select -tgl pCube2 ;
+duplicate -rr;
+// Result: pCube3 pCube4 //
+move -r -2.606634 0 0 ;
+select -d pCube2.f[5] ;
+select -r pCube2.e[5] ;
+move -r -0.69896 0 0 ;
+select -r pCube4 ;
+select -d pCube4.f[5] ;
+select -r pCube4.e[4] ;
+move -r 0.399662 0 0 ;
+select -r pCube1 ;
+select -r pCube1 ;
+rename "pCube1" "L_Feet_01_Geo";
+// Result: L_Feet_01_Geo // 
+select -r pCube2 ;
+select -r pCube2 ;
+rename "pCube2" "L_Feet_02_Geo";
+// Result: L_Feet_02_Geo // 
+select -r pCube3 ;
+select -r pCube3 ;
+rename "pCube3" "R_Feet_01_Geo";
+// Result: R_Feet_01_Geo // 
+select -r pCube4 ;
+select -r pCube4 ;
+rename "pCube4" "R_Feet_02_Geo";
+// Result: R_Feet_02_Geo // 
+CreatePolygonSphere; //Create the wrists;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere7 // 
+move -r 0 8.950865 0 ;
+scale -r 0.563864 0.563864 0.563864 ;
+move -r 2.722136 0 0 ;
+move -r 0 0.189524 0 ;
+move -r 0.0288851 0 0 ;
+move -r -0.028525 0 0 ;
+duplicate -rr;
+// Result: pSphere2 //
+move -r -5.542402 0 0 ;
+select -r pSphere1 ;
+rename "pSphere1" "L_Wrist_Geo";
+// Result: L_Wrist_Geo // 
+select -r pSphere2 ;
+select -r pSphere2 ;
+rename "pSphere2" "R_Wrist_Geo";
+// Result: R_Wrist_Geo // 
+CreatePolygonCube;//Create the hands;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube7 // 
+move -r 0 5.577251 0 ;
+move -r 0 2.623589 0 ;
+move -r 2.656164 0 0 ;
+scale -r 1 1 0.512462 ;
+scale -r 1 1 0.944594 ;
+select -cl  ;
+// Undo: select -cl   // 
+scale -r 0.778117 1 1 ;
+move -r 0.0651638 0 0 ;
+move -r 0 0.104472 0 ;
+scale -r 1.2 1 1 ;
+scale -r 1 1.177778 1 ;
+move -r 0 0.107464 0 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r -5.545148 0 0 ;
+select -r pCube2 ;
+rename "pCube2" "R_Hand_Geo";
+// Result: R_Hand_Geo // 
+select -r pCube1 ;
+select -r pCube1 ;
+rename "pCube1" "L_Hand_Geo";
+// Result: L_Hand_Geo // 
+CreatePolygonSphere;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere8 // 
+move -r 0 8.6549 0 ;
+scale -r 0.23634 0.23634 0.23634 ;
+move -r 2.433844 0 0 ;
+move -r 0 -0.994576 0 ;
+move -r 0 0 0.26938 ;
+move -r 0 0.191808 0 ;
+move -r -0.100099 0 0 ;
+move -r 0.0861626 0 0 ;
+duplicate -rr;
+// Result: pSphere2 //
+move -r 0.624729 0 0 ;
+select -tgl pSphere1 ;
+duplicate -rr;
+// Result: pSphere3 pSphere4 //
+move -r -5.587849 0 0 ;
+move -r 0.0287216 0 0 ;
+select -cl  ;
+select -r pSphere2 ;
+CreatePolygonSphere;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere5 polySphere9 // 
+move -r 0 8.932623 0 ;
+move -r 0 0 -1.692089 ;
+move -r 2.661591 0 0 ;
+scale -r 0.500238 0.500238 0.500238 ;
+scale -r 0.815821 0.815821 0.815821 ;
+move -r 0 -0.363109 0 ;
+move -r 0 0 1.441493 ;
+move -r 0.0764725 0 0 ;
+move -r 0 0.065972 0 ;
+duplicate -rr;
+// Result: pSphere6 //
+move -r -5.583634 0 0 ;
+move -r 0.0154447 0 0 ;
+move -r 0.282187 0 0 ;
+select -r pSphere5 ;
+move -r -0.28883 0 0 ;
+move -r 0.0173898 0 0 ;
+select -cl  ;
+select -r pSphere4 ;
+select -r pSphere4 ;
+rename "pSphere4" "R_fingerTwo_01_Geo";
+// Result: R_fingerTwo_01_Geo // 
+select -r pSphere3 ;
+select -r pSphere3 ;
+rename "pSphere3" "R_fingerOne_02_Geo";
+// Result: R_fingerOne_02_Geo // 
+select -r pSphere6 ;
+select -r pSphere6 ;
+rename "pSphere6" "R_Thumb_01_Geo";
+// Result: R_Thumb_01_Geo // 
+select -r pSphere1 ;
+select -r pSphere1 ;
+rename "pSphere1" "L_fingerOne_01_Geo";
+// Result: L_fingerOne_01_Geo // 
+select -r pSphere2 ;
+select -r pSphere2 ;
+rename "pSphere2" "L_fingerTwo_01_Geo";
+// Result: L_fingerTwo_01_Geo // 
+select -r pSphere5 ;
+select -r pSphere5 ;
+rename "pSphere5" "L_Thumb_01_Geo";
+// Result: L_Thumb_01_Geo // 
+CreatePolygonCube; //Creating fingers;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube8 // 
+move -r 0 7.699756 0 ;
+move -r 2.430588 0 0 ;
+move -r 0 -0.540457 0 ;
+scale -r 0.277778 1 1 ;
+scale -r 1 0.666667 1 ;
+move -r 0 0.210178 0 ;
+move -r -0.0250212 0 0 ;
+move -r 0 0.0400339 0 ;
+move -r 0.0250212 0 0 ;
+scale -r 1 1 0.222222 ;
+move -r 0 0 0.272732 ;
+move -r -0.0150127 0 0 ;
+move -r 0 0.0200169 0 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r 0.630533 0 0 ;
+select -r L_fingerOne_01_Geo ;
+duplicate -rr;
+// Result: L_fingerOne_01_Geo1 //
+move -r 0 -0.725614 0 ;
+scale -r 0.779955 0.779955 0.779955 ;
+duplicate -rr;
+// Result: L_fingerOne_01_Geo2 //
+move -r 0.630533 0 0 ;
+select -r pCube1 ;
+duplicate -rr;
+// Result: pCube3 //
+move -r 0 -0.72061 0 ;
+scale -r 0.774834 0.774834 0.774834 ;
+scale -r 1 1.455556 1 ;
+move -r 0 -0.00500423 0 ;
+duplicate -rr;
+// Result: pCube4 //
+move -r 0.635538 0 0 ;
+select -r L_fingerOne_01_Geo1 ;
+duplicate -rr;
+// Result: L_fingerOne_01_Geo3 //
+move -r 0 -0.825699 0 ;
+select -r L_fingerOne_01_Geo2 ;
+duplicate -rr;
+// Result: L_fingerOne_01_Geo4 //
+move -r 0 -0.825699 0 ;
+doDelete;
+select -r L_fingerOne_01_Geo3 ;
+duplicate -rr;
+// Result: L_fingerOne_01_Geo4 //
+move -r 0.630533 0 0 ;
+select -cl  ;
+select -r L_fingerOne_01_Geo ;
+select -r pCube1 ;
+select -r pCube1 ;
+rename "pCube1" "L_fingerOne_02_Geo";
+// Result: L_fingerOne_02_Geo // 
+select -r L_fingerOne_01_Geo1 ;
+select -r L_fingerOne_01_Geo1 ;
+rename "L_fingerOne_01_Geo1" "L_fingerOne_03_Geo";
+// Result: L_fingerOne_03_Geo // 
+select -r pCube3 ;
+select -r pCube3 ;
+rename "pCube3" "L_fingerOne_04_Geo";
+// Result: L_fingerOne_04_Geo // 
+select -r L_fingerOne_01_Geo3 ;
+select -r L_fingerOne_01_Geo3 ;
+select -r L_fingerOne_01_Geo ;
+select -r L_fingerOne_02_Geo ;
+select -r L_fingerOne_03_Geo ;
+select -r L_fingerOne_04_Geo ;
+select -r L_fingerOne_01_Geo3 ;
+select -r L_fingerOne_01_Geo3 ;
+rename "L_fingerOne_01_Geo3" "L_fingerOne_05_Geo";
+// Result: L_fingerOne_05_Geo // 
+select -r L_fingerOne_01_Geo ;
+select -r L_fingerOne_02_Geo ;
+select -r L_fingerOne_03_Geo ;
+select -r L_fingerOne_04_Geo ;
+select -r L_fingerOne_05_Geo ;
+select -r L_fingerTwo_01_Geo ;
+select -r pCube2 ;
+select -r pCube2 ;
+rename "pCube2" "L_fingerTwo_02_Geo";
+// Result: L_fingerTwo_02_Geo // 
+select -r L_fingerOne_01_Geo2 ;
+select -r L_fingerOne_01_Geo2 ;
+rename "L_fingerOne_01_Geo2" "L_fingerTwo_03_Geo";
+// Result: L_fingerTwo_03_Geo // 
+select -r pCube4 ;
+select -r pCube4 ;
+rename "pCube4" "L_fingerTw0_04_geo";
+// Result: L_fingerTw0_04_geo // 
+select -r L_fingerOne_01_Geo4 ;
+select -r L_fingerOne_01_Geo4 ;
+rename "L_fingerOne_01_Geo4" "L_fingerTwo_05_Geo";
+// Result: L_fingerTwo_05_Geo // 
+select -r L_fingerTwo_01_Geo ;
+select -r L_fingerTwo_02_Geo ;
+select -r L_fingerTwo_03_Geo ;
+select -r L_fingerTw0_04_geo ;
+select -r L_fingerTwo_05_Geo ;
+select -r L_fingerOne_01_Geo ;
+select -r L_fingerOne_02_Geo ;
+select -r L_fingerOne_03_Geo ;
+select -r L_fingerOne_04_Geo ;
+select -r L_fingerOne_05_Geo ;
+select -r L_Thumb_01_Geo ;
+select -r L_fingerOne_01_Geo ;
+select -tgl L_fingerTwo_01_Geo ;
+select -r L_Leg_03_Geo L_Hand_Geo L_fingerTwo_05_Geo L_fingerTw0_04_geo L_fingerOne_04_Geo L_fingerOne_05_Geo L_fingerTwo_03_Geo L_fingerOne_03_Geo L_fingerTwo_02_Geo L_fingerOne_02_Geo L_fingerTwo_01_Geo L_fingerOne_01_Geo ;
+select -cl  ;
+select -r L_fingerTwo_05_Geo L_fingerTw0_04_geo L_fingerOne_04_Geo L_fingerOne_05_Geo L_fingerTwo_03_Geo L_fingerOne_03_Geo L_fingerTwo_02_Geo L_fingerOne_02_Geo L_fingerTwo_01_Geo L_fingerOne_01_Geo ;
+duplicate -rr;
+// Result: L_fingerTwo_05_Geo1 L_fingerTw0_04_geo1 L_fingerOne_04_Geo1 L_fingerOne_05_Geo1 L_fingerTwo_03_Geo1 L_fingerOne_03_Geo1 L_fingerTwo_02_Geo1 L_fingerOne_02_Geo1 L_fingerTwo_01_Geo1 L_fingerOne_01_Geo1 //
+move -r -3.910717 0 0 ;
+move -r -1.643414 0 0 ;
+select -r L_fingerTwo_03_Geo1 ;
+select -r L_fingerOne_05_Geo1 ;
+select -r L_fingerOne_04_Geo1 ;
+select -r L_fingerTw0_04_geo1 ;
+select -r L_fingerOne_01_Geo1 ;
+select -r L_fingerTwo_01_Geo1 ;
+select -r R_fingerTwo_01_Geo ;
+select -r L_fingerOne_02_Geo1 ;
+select -r L_fingerOne_02_Geo1 ;
+select -r R_fingerTwo_01_Geo ;
+select -r L_fingerOne_02_Geo1 ;
+select -r L_fingerOne_02_Geo1 ;
+rename "L_fingerOne_02_Geo1" "R_fingerTwo_02_Geo";
+// Result: R_fingerTwo_02_Geo // 
+select -r L_fingerOne_03_Geo1 ;
+select -r L_fingerOne_03_Geo1 ;
+rename "L_fingerOne_03_Geo1" "R_fingerTwo_03_Geo";
+// Result: R_fingerTwo_03_Geo // 
+select -r L_fingerOne_04_Geo1 ;
+select -r L_fingerOne_04_Geo1 ;
+rename "L_fingerOne_04_Geo1" "R_fingerTwo_04_Geo";
+// Result: R_fingerTwo_04_Geo // 
+select -r L_fingerOne_05_Geo1 ;
+select -r L_fingerOne_05_Geo1 ;
+rename "L_fingerOne_05_Geo1" "L_fingerTwo_0";
+// Result: L_fingerTwo_0 // 
+select -r R_fingerTwo_04_Geo ;
+select -r L_fingerTwo_0 ;
+select -r L_fingerTwo_0 ;
+rename "L_fingerTwo_0" "L_fingerTwo_05_Geo";
+// Result: L_fingerTwo_05_Geo2 // 
+select -r R_fingerTwo_01_Geo ;
+select -r R_fingerTwo_02_Geo ;
+select -r R_fingerTwo_03_Geo ;
+select -r R_fingerTwo_04_Geo ;
+select -r L_fingerTwo_05_Geo2 ;
+select -r L_fingerTwo_05_Geo2 ;
+rename "L_fingerTwo_05_Geo2" "R_fingerTwo_05_Geo2";
+// Result: R_fingerTwo_05_Geo2 // 
+select -r R_fingerTwo_05_Geo2 ;
+rename "R_fingerTwo_05_Geo2" "R_fingerTwo_05_Geo";
+// Result: R_fingerTwo_05_Geo // 
+select -r R_fingerTwo_01_Geo ;
+select -r R_fingerTwo_02_Geo ;
+select -r R_fingerTwo_03_Geo ;
+select -r R_fingerTwo_04_Geo ;
+select -r R_fingerTwo_05_Geo ;
+select -r R_fingerOne_02_Geo ;
+select -r R_fingerOne_02_Geo ;
+rename "R_fingerOne_02_Geo" "R_fingerOne_01_Geo";
+// Result: R_fingerOne_01_Geo // 
+select -r L_fingerTwo_02_Geo1 ;
+select -r L_fingerTwo_02_Geo1 ;
+rename "L_fingerTwo_02_Geo1" "R_fingerTwo_02_Geo";
+// Result: R_fingerTwo_02_Geo1 // 
+select -r R_fingerTwo_02_Geo1 ;
+rename "R_fingerTwo_02_Geo1" "R_fingerTwo_02_Geo";
+// Result: R_fingerTwo_02_Geo2 // 
+select -r L_fingerTwo_03_Geo1 ;
+select -r L_fingerTw0_04_geo1 ;
+select -r L_fingerTwo_05_Geo1 ;
+select -r R_fingerTwo_01_Geo ;
+select -r R_fingerTwo_02_Geo ;
+select -r R_fingerOne_01_Geo ;
+select -r R_fingerTwo_02_Geo2 ;
+select -r R_fingerTwo_02_Geo2 ;
+rename "R_fingerTwo_02_Geo2" "R_fingerOne_02_Geo";
+// Result: R_fingerOne_02_Geo // 
+select -r L_fingerTwo_03_Geo1 ;
+select -r L_fingerTwo_03_Geo1 ;
+rename "L_fingerTwo_03_Geo1" "R_fingerOne_03_Geo";
+// Result: R_fingerOne_03_Geo // 
+select -r L_fingerTw0_04_geo1 ;
+select -r L_fingerTw0_04_geo1 ;
+rename "L_fingerTw0_04_geo1" "R_fingerOne_04_Geo";
+// Result: R_fingerOne_04_Geo // 
+select -r L_fingerTwo_05_Geo1 ;
+select -r L_fingerTwo_05_Geo1 ;
+rename "L_fingerTwo_05_Geo1" "R_fingerOne_05_Geo";
+// Result: R_fingerOne_05_Geo // 
+select -r R_fingerOne_01_Geo ;
+select -r R_fingerOne_02_Geo ;
+select -r R_fingerOne_03_Geo ;
+select -r R_fingerOne_04_Geo ;
+select -r R_fingerOne_05_Geo ;
+select -r R_fingerTwo_01_Geo ;
+select -r R_fingerTwo_02_Geo ;
+select -r R_fingerTwo_03_Geo ;
+select -r R_fingerTwo_04_Geo ;
+select -r R_fingerTwo_05_Geo ;
+select -r R_fingerTwo_01_Geo ;
+select -tgl R_fingerTwo_05_Geo ;
+select -tgl R_fingerTwo_04_Geo ;
+select -tgl R_fingerTwo_03_Geo ;
+select -tgl R_fingerTwo_02_Geo ;
+duplicate -rr;
+// Result: R_fingerTwo_01_Geo1 R_fingerTwo_05_Geo1 R_fingerTwo_04_Geo1 R_fingerTwo_03_Geo1 R_fingerTwo_02_Geo1 //
+move -r 0 0 -0.574244 ;
+move -r 0.602562 0 0 ;
+move -r 0 0.423039 0 ;
+move -r 0.033567 0 0 ;
+move -r 0 0.0251752 0 ;
+duplicate -rr;
+// Result: R_fingerTwo_01_Geo2 R_fingerTwo_05_Geo2 R_fingerTwo_04_Geo2 R_fingerTwo_03_Geo2 R_fingerTwo_02_Geo2 //
+move -r 4.962275 0 0 ;
+move -r -0.0203301 0 0 ;
+select -r R_fingerTwo_01_Geo1 ;
+select -r R_Thumb_01_Geo ;
+select -r R_fingerTwo_01_Geo1 ;
+select -r R_fingerTwo_01_Geo1 ;
+rename "R_fingerTwo_01_Geo1" "R_Thumb_02_Geo";
+// Result: R_Thumb_02_Geo // 
+select -r R_fingerTwo_02_Geo1 ;
+select -r R_fingerTwo_02_Geo1 ;
+rename "R_fingerTwo_02_Geo1" "R_Thumb_03_Geo";
+// Result: R_Thumb_03_Geo // 
+select -r R_fingerTwo_03_Geo1 ;
+select -r R_fingerTwo_03_Geo1 ;
+rename "R_fingerTwo_03_Geo1" "R_Thumb_04_Geo";
+// Result: R_Thumb_04_Geo // 
+select -r R_fingerTwo_04_Geo1 ;
+select -r R_fingerTwo_04_Geo1 ;
+rename "R_fingerTwo_04_Geo1" "R_Thumb_05_Geo";
+// Result: R_Thumb_05_Geo // 
+select -r R_fingerTwo_05_Geo1 ;
+select -r R_fingerTwo_05_Geo1 ;
+rename "R_fingerTwo_05_Geo1" "R_Thumb_06_Geo";
+// Result: R_Thumb_06_Geo // 
+select -r R_Thumb_01_Geo ;
+select -r R_Thumb_02_Geo ;
+select -r R_Thumb_03_Geo ;
+select -r R_Thumb_04_Geo ;
+select -r R_Thumb_05_Geo ;
+select -r R_Thumb_06_Geo ;
+select -r L_Thumb_01_Geo ;
+select -r R_fingerTwo_01_Geo2 ;
+select -r R_fingerTwo_01_Geo2 ;
+rename "R_fingerTwo_01_Geo2" "L_Thumb_01_Geo";
+// Result: L_Thumb_01_Geo1 // 
+select -r L_Thumb_01_Geo ;
+select -r L_Thumb_01_Geo1 ;
+select -r L_Thumb_01_Geo1 ;
+rename "L_Thumb_01_Geo1" "L_Thumb_02_Geo";
+// Result: L_Thumb_02_Geo // 
+select -r R_fingerTwo_05_Geo2 ;
+select -r R_fingerTwo_02_Geo2 ;
+select -r R_fingerTwo_02_Geo2 ;
+rename "R_fingerTwo_02_Geo2" "L_Thumb_03_Geo";
+// Result: L_Thumb_03_Geo // 
+select -r R_fingerTwo_03_Geo2 ;
+select -r R_fingerTwo_03_Geo2 ;
+rename "R_fingerTwo_03_Geo2" "L_Thumb_04_Geo";
+// Result: L_Thumb_04_Geo // 
+select -r R_fingerTwo_04_Geo2 ;
+select -r R_fingerTwo_04_Geo2 ;
+rename "R_fingerTwo_04_Geo2" "L_Thumb_05_Geo";
+// Result: L_Thumb_05_Geo // 
+select -r R_fingerTwo_05_Geo2 ;
+select -r R_fingerTwo_05_Geo2 ;
+rename "R_fingerTwo_05_Geo2" "L_Thumb_06_Geo";
+// Result: L_Thumb_06_Geo // 
+select -r L_Thumb_02_Geo ;
+select -r L_Thumb_01_Geo ;
+select -r L_Thumb_03_Geo ;
+select -r L_Thumb_01_Geo ;
+select -r L_Thumb_02_Geo ;
+select -r L_Thumb_03_Geo ;
+select -r L_Thumb_04_Geo ;
+select -r L_Thumb_05_Geo ;
+select -r L_Thumb_06_Geo ;
+select -cl  ;
+file -f -save  -options "v=0;";
+// Result: C:/Users/Grace/Desktop/DGM/New Github/2020 Github/Fall/3670 001/Simple Model with MEL.ma // 
