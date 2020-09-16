@@ -349,3 +349,274 @@ select -r R_Shoulder_Geo ;
 select -r R_Arm_01_Geo ;
 select -r R_Arm_02_Geo ;
 select -r pCube4 ;
+select -r L_Leg_02_Geo ;
+select -r pCube4 ;
+rename "pCube4" "L_Arm_01_Geo"; //Arm;
+// Result: L_Arm_01_Geo // 
+select -r L_Arm_01_Geo ;
+select -r pSphere2 ;
+rename "pSphere2" "L_Arm_02_Geo"; //Arm;
+// Result: L_Arm_02_Geo // 
+parent L_Arm_01_Geo L_Shoulder_Geo; //parent;
+// Result: L_Arm_01_Geo // 
+parent L_Arm_02_Geo L_Arm_01_Geo; //parent;
+// Result: L_Arm_02_Geo // 
+select -r R_Arm_01_Geo ;
+select -r R_Arm_02_Geo ;
+select -r L_Arm_01_Geo ;
+CreatePolygonCube; //Arm;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube5 // 
+scale -r 0.790184 0.790184 0.790184 ;
+move -r 0 3.706805 0 ;
+move -r -2.96181 0 0 ;
+scale -r 1 3.388889 1 ;
+move -r -0.0726825 0 0 ;
+move -r 0 0.254389 0 ;
+move -r 0.0181706 0 0 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r 6.341545 0 0 ;
+CreatePolygonSphere; //Wrist;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere9 // 
+move -r 0 1.889744 0 ;
+scale -r 0.538404 0.538404 0.538404 ;
+move -r -3.034493 0 0 ;
+move -r 0 0.908531 0 ;
+duplicate -rr;
+// Result: pSphere2 //
+move -r 6.359715 0 0 ;
+doDelete;
+select -r pSphere1 ;
+doDelete;
+CreatePolygonSphere; //Arm;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere9 // 
+move -r 0 3.161687 0 ;
+move -r 3.434246 0 0 ;
+move -r 0 -0.254389 0 ;
+scale -r 0.61184 0.61184 0.61184 ;
+move -r -0.145365 0 0 ;
+move -r 0 -0.163536 0 ;
+move -r 0.0726825 0 0 ;
+duplicate -rr;
+// Result: pSphere2 //
+move -r -6.377886 0 0 ;
+move -r 0 -0.508777 0 ;
+// Undo: move -r 0 -0.508777 0  // 
+duplicate -rr;
+// Result: pSphere3 //
+move -r 0 -0.29073 0 ;
+duplicate -rr;
+// Result: pSphere4 //
+move -r 6.377886 0 0 ;
+select -r pCube1 ;
+select -r R_Arm_02_Geo ;
+select -r pCube1 ;
+rename "pCube1" "R_Arm_03_Geo"; //Arm;
+// Result: R_Arm_03_Geo // 
+parent R_Arm_03_Geo R_Arm_02_Geo; //Parent;
+// Result: R_Arm_03_Geo // 
+select -r pCube2 ;
+select -r pSphere1 ;
+select -r pSphere2 ;
+rename "pSphere2" "R_Arm_04_Geo"; //Arm;
+// Result: R_Arm_04_Geo // 
+parent R_Arm_04_Geo R_Arm_03_Geo; //parent;
+// Result: R_Arm_04_Geo // 
+select -r pSphere3 ;
+rename "pSphere3" "R_Wrist_Geo"; //Wrist;
+// Result: R_Wrist_Geo // 
+parent R_Wrist_Geo R_Arm_04_Geo; //parent;
+// Result: R_Wrist_Geo // 
+select -r L_Arm_02_Geo ;
+select -r pCube2 ;
+rename "pCube2" "L_Arm_03_Geo"; //Arm;
+// Result: L_Arm_03_Geo // 
+parent L_Arm_03_Geo L_Arm_02_Geo; //parent;
+// Result: L_Arm_03_Geo // 
+select -r pSphere1 ;
+rename "pSphere1" "L_Arm_04_Geo"; //Arm;
+// Result: L_Arm_04_Geo // 
+parent L_Arm_04_Geo L_Arm_03_Geo; //parent;
+// Result: L_Arm_04_Geo // 
+select -r pSphere4 ;
+rename "pSphere4" "L_Wrist_Geo"; //Wrist;
+// Result: L_Wrist_Geo // 
+parent L_Wrist_Geo L_Arm_04_Geo; //parent;
+// Result: L_Wrist_Geo // 
+CreatePolygonCube; //Feet;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube6 // 
+move -r 0 -2.140026 0 ;
+move -r 0 0 2.149055 ;
+scale -r 1 0.277778 1 ;
+move -r 0 -0.361186 0 ;
+scale -r 1 0.866667 1 ;
+move -r 0 -0.00902964 0 ;
+move -r 1.65072 0 0 ;
+scale -r 1.087283 1 1 ;
+move -r 0.0166815 0 0 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r -3.108934 0 0 ;
+move -r 0.0139716 0 0 ;
+select -r R_Leg_04_Geo ;
+select -r pCube2 ;
+select -r R_Feet_01_Geo ;
+select -r pCube2 ;
+rename "pCube2" "R_Feet_02_Geo"; //Feet
+parent R_Feet_02_Geo R_Feet_01_Geo; //parent;
+// Result: R_Feet_02_Geo // 
+select -r pCube1 ;
+rename "pCube1" "L_Feet_02_Geo"; //Feet
+parent L_Feet_02_Geo L_Feet_01_Geo; //Feet;
+// Result: L_Feet_02_Geo // 
+CreatePolygonCube; //Hand;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube7 // 
+move -r 0 2.36521 0 ;
+move -r 3.276802 0 0 ;
+move -r 0 -0.51739 0 ;
+move -r 0.0739128 0 0 ;
+scale -r 1 1.311111 1 ;
+move -r 0 -0.147826 0 ;
+move -r 0 0.0492752 0 ;
+scale -r 1 1 0.233738 ;
+duplicate -rr;
+// Result: pCube2 //
+move -r -6.356503 0 0 ;
+CreatePolygonSphere; //Finger;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere10 // 
+scale -r 0.203832 0.203832 0.203832 ;
+move -r 3.160217 0 0 ;
+move -r 0 1.09225 0 ;
+move -r -0.144756 0 0 ;
+duplicate -rr;
+// Result: pSphere2 //
+move -r 0.394789 0 0 ;
+duplicate -rr;
+// Result: pSphere3 //
+move -r 0.36189 0 0 ;
+select -tgl pSphere2 ;
+select -tgl pSphere1 ;
+duplicate -rr;
+// Result: pSphere4 pSphere5 pSphere6 //
+move -r -3.546516 0 0 ;
+move -r -2.840218 0 0 ;
+duplicate -rr;
+// Result: pSphere7 pSphere8 pSphere9 //
+move -r 0 -0.758894 0 ;
+select -r pSphere3 ;
+select -tgl pSphere2 ;
+select -tgl pSphere1 ;
+duplicate -rr;
+// Result: pSphere10 pSphere11 pSphere12 //
+move -r 0 -0.803977 0 ;
+doDelete;
+select -r pSphere7 ;
+select -tgl pSphere8 ;
+select -tgl pSphere9 ;
+doDelete;
+CreatePolygonCube; //Finger;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube3 polyCube8 // 
+move -r 3.212183 0 0 ;
+scale -r 0.294605 0.294605 0.294605 ;
+scale -r 0.866285 0.866285 0.866285 ;
+move -r 0 0.864204 0 ;
+move -r -0.193522 0 0 ;
+scale -r 1 3.520798 1 ;
+move -r 0 -0.291814 0 ;
+scale -r 1 0.733333 1 ;
+move -r 0 0.134872 0 ;
+duplicate -rr;
+// Result: pCube4 //
+move -r 0.396682 0 0 ;
+duplicate -rr;
+// Result: pCube5 //
+move -r 0.364947 0 0 ;
+select -cl  ;
+select -r pSphere3 ;
+select -tgl pSphere2 ;
+select -tgl pSphere1 ;
+duplicate -rr;
+// Result: pSphere7 pSphere8 pSphere9 //
+move -r 0 -0.745762 0 ;
+select -r pCube5 ;
+select -tgl pCube4 ;
+select -tgl pCube3 ;
+duplicate -rr;
+// Result: pCube6 pCube7 pCube8 //
+move -r 0 -0.761629 0 ;
+select -r pSphere7 ;
+select -tgl pSphere8 ;
+select -tgl pSphere9 ;
+duplicate -rr;
+// Result: pSphere10 pSphere11 pSphere12 //
+move -r 0 -0.753695 0 ;
+select -r pCube5 ;
+select -r pSphere12 pSphere11 pSphere10 pCube8 pCube7 pCube6 pCube4 pCube3 pSphere9 pSphere8 pSphere7 pCube5 ;
+move -r -0.081866 0 0 ;
+// Undo: move -r -0.081866 0 0  // 
+duplicate -rr;
+// Result: pSphere13 pSphere14 pSphere15 pCube9 pCube10 pCube11 pCube12 pCube13 pSphere16 pSphere17 pSphere18 pCube14 //
+move -r -3.096025 0 0 ;
+move -r -3.282084 0 0 ;
+select -cl  ;
+select -r pSphere4 ;
+select -r pCube2 ;
+select -r R_Wrist_Geo ;
+select -r pCube2 ;
+rename "pCube2" "R_Hand"; //Hand;
+// Result: R_Hand // 
+rename "R_Hand" "R_Hand_Geo"; //Hand
+parent R_Hand_Geo R_Wrist_Geo; //parent;
+// Result: R_Hand_Geo // 
+select -r pCube1 ;
+rename "pCube1" "L_Hand_Geo"; //Hand
+parent L_Hand_Geo L_Wrist_Geo; //parent;
+// Result: L_Hand_Geo // 
+select -r pSphere1 ;
+rename "pSphere1" "L_fingerOne_01_Geo";
+parent L_fingerOne_01_Geo L_Hand_Geo; //parent;
+// Result: L_fingerOne_01_Geo // 
+select -r pCube3 ;
+rename "pCube3" "L_fingerOne_02_Geo"; //finger
+parent L_fingerOne_02_Geo L_fingerOne_01_Geo; //parent;
+// Result: L_fingerOne_02_Geo // 
+select -r pSphere9 ;
+rename "pSphere9" "L_fingerOne_03_Geo"; //finger
+parent L_fingerOne_03_Geo L_fingerOne_02; //parent;
+// Error: line 2: No object matches name: L_fingerOne_02 // 
+rename "pSphere9" "L_fingerOne_03_Geo"; //finger
+parent L_fingerOne_03_Geo L_fingerOne_02_Geo; //parent;
+// Error: line 1: No object matches name // 
+parent L_fingerOne_03_Geo L_fingeraOne_02_Geo; //parent;
+// Error: line 1: No object matches name: L_fingeraOne_02_Geo // 
+parent L_fingerOne_03_Geo L_fingerOne_02_Geo ;
+// Result: L_fingerOne_03_Geo // 
+select -r pCube8 ;
+rename "pCube8" "L_fingerOne_04_Geo"; 
+parent L_fingerOne_04_Geo L_fingerOne-03_Geo; //parent;
+// Error: line 2: No object matches name: L_fingerOne // 
+select -r L_fingerOne_04_Geo ;
+select -r L_fingerOne_03_Geo ;
+select -r L_fingerOne_03_Geo ;
+parent L_fingerOne_04_Geo L_fingerOne_03_Geo; //parent;
+// Result: L_fingerOne_04_Geo // 
+select -r pSphere12 ;
+rename "pSphere12" "L_fingerOne_04_Geo"; //finger
+parent pSphere12 L_fingerOne_04_Geo; //parent;
+// Error: line 2: No object matches name: pSphere12 // 
+parent pSphere12 L_fingerOne_04_Geo; //parent;
+// Error: line 1: No object matches name: pSphere12 // 
+parent L_fingerOne_04_Geo L_fingerOne_04_Geo; //parent;
+// Error: line 1: More than one object matches name: L_fingerOne_04_Geo // 
+parent |L_fingerOne_04_Geo L_fingerOne_03_Geo|L_fingerOne_04_Geo ;
+// Result: L_fingerOne_03_Geo|L_fingerOne_04_Geo|L_fingerOne_04_Geo // 
+select -r L_fingerOne_03_Geo|L_fingerOne_04_Geo|L_fingerOne_04_Geo ;
+rename "L_fingerOne_03_Geo|L_fingerOne_04_Geo|L_fingerOne_04_Geo" "L_fingerOne_05_Geo";
+// Result: L_fingerOne_05_Geo // 
