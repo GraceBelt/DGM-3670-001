@@ -1,0 +1,241 @@
+file -f -new;
+// untitled // 
+doOpenFile ("C:/Users/Grace/Desktop/DGM/New Github/2020 Github/Fall/3670 001/Simple Model with MEL.ma");
+file -f -options "v=0;"  -ignoreVersion  -typ "mayaAscii" -o "C:/Users/Grace/Desktop/DGM/New Github/2020 Github/Fall/3670 001/Simple Model with MEL.ma";addRecentFile("C:/Users/Grace/Desktop/DGM/New Github/2020 Github/Fall/3670 001/Simple Model with MEL.ma", "mayaAscii");
+// File read in  2.9 seconds.
+commandPort -securityWarning -name commandportDefault;
+onSetCurrentLayout "Modeling - Standard";
+select -r Head_Geo ;
+select -r Torso_Geo ;
+select -r Neck_Geo ;
+select -r Neck_Geo ;
+parent Neck_Geo Head_Geo ;
+// Result: Neck_Geo // 
+// Undo: parent Neck_Geo Head_Geo ; // 
+parent Neck_Geo Head_Geo ;
+// Result: Neck_Geo // 
+parent Torso_Geo Neck_Geo;
+// Result: Torso_Geo // 
+Parent Stomach_Geo Torso_Geo; //Parent together;
+parent;
+// Error: line 0: Not enough objects or values. // 
+parent Stomach_Geo Torso_Geo; //Parent together;
+// Result: Stomach_Geo // 
+parent R_Shoulder_Geo Torso_Geo; //Parent together;
+// Result: R_Shoulder_Geo // 
+parent L_Shoulder_Geo Torso_Geo; //parent together;
+// Result: L_Shoulder_Geo // 
+parent R_Arm_01_Geo Torso_Geo; //parent together;
+// Result: R_Arm_01_Geo // 
+parent R_Arm_01_Geo R_Shoulder_Geo; //parent together;
+// Result: R_Arm_01_Geo // 
+parent L_Arm_01_Geo L_Shoulder_Geo; //parent together;
+// Result: L_Arm_01_Geo // 
+parent R_Arm_02_Geo R_Arm_01_Geo; //parent together;
+// Result: R_Arm_02_Geo // 
+parent L_Arm_02_Geo L_Arm_01_Geo; //parent together;
+// Result: L_Arm_02_Geo // 
+parent R_Arm_03_Geo R_Arm_02_Geo; //parent together;
+// Result: R_Arm_03_Geo // 
+parent L_Arm_03_Geo L_Arm_02_Geo; //parent together;
+// Result: L_Arm_03_Geo // 
+parent R_Arm_04_Geo R_Arm_03_Geo; //parent together;
+// Result: R_Arm_04_Geo // 
+L_Arm_04_Geo L_Arm_03_Geo; //parent together;
+// Error: line 1: Cannot find procedure "L_Arm_04_Geo". // 
+parent L_Arm_04_Geo L_Arm_03_Geo; //parent together;
+// Result: L_Arm_04_Geo // 
+parent Bottom_Geo Stomach_Geo; //parent together;
+// Result: Bottom_Geo // 
+parent R_Leg_01_Geo Bottom_Geo; //parent together;
+// Result: R_Leg_01_Geo // 
+parent L_Leg_01_Geo Bottom_Geo; //parent together;
+// Result: L_Leg_01_Geo // 
+parent R_Leg_02_Geo R_Leg_01_Geo; //parent together;
+// Result: R_Leg_02_Geo // 
+parent L_Leg_02_Geo L_Leg_01_Geo; //parent together;
+// Result: L_Leg_02_Geo // 
+parent L_Leg_03_Geo L_Leg_02_Geo; //parent together;
+// Result: L_Leg_03_Geo // 
+parent R_Leg_03_Geo R_Leg_02_Geo; //parent together;
+// Result: R_Leg_03_Geo // 
+parent L_Leg_04_Geo L_Leg_03_Geo; //parent together;
+// Result: L_Leg_04_Geo // 
+parent R_Leg_04_Geo R_Leg_03_Geo; //parent together;
+// Result: R_Leg_04_Geo // 
+parent L_Leg_05_Geo L_Leg_04_Geo; //parent together;
+// Result: L_Leg_05_Geo // 
+parent R_Leg_05_Geo R_Leg_04_Geo //parent together;
+// Error:  // 
+// Error: Line 2.0: Syntax error // 
+parent R_Leg_05_Geo R_Leg_04_Geo; //parent together;
+// Result: R_Leg_05_Geo // 
+parent L_Feet_01_Geo L_Leg_05_Geo; //parent together;
+// Result: L_Feet_01_Geo // 
+parent L_Feet_02_Geo L_Feet_01_Geo; //parent together;
+// Result: L_Feet_02_Geo // 
+parent R_Feet_01_Geo R_Leg_05_Geo; //parent together;
+// Result: R_Feet_01_Geo // 
+parent R_Feet_02_Geo R_Feet_01_Geo; //parent together;
+// Result: R_Feet_02_Geo // 
+parent L_Wrist_Geo L_Arm_04_Geo; //parent together;
+// Result: L_Wrist_Geo // 
+parent R_Wrist_Geo R_Arm_04_Geo; //parent together;
+// Result: R_Wrist_Geo // 
+parent L_Hand_Geo L_Wrist_Geo; //parent together;
+// Result: L_Hand_Geo // 
+parent R_Hand_Geo R_Wrist_Geo; //parent together;
+// Result: R_Hand_Geo // 
+parent L_fingerOne_01_Geo L_Hand_Geo; //parent together;
+// Result: L_fingerOne_01_Geo // 
+parent L_fingerTwo_01_Geo L_Hand_Geo; //parent together;
+// Result: L_fingerTwo_01_Geo // 
+parent R_fingerOne_01_Geo R_Hand_Geo; //parent together;
+// Result: R_fingerOne_01_Geo // 
+parent R_fingerTwo_01_Geo R_Hand_Geo; //parent together;
+// Result: R_fingerTwo_01_Geo // 
+parent L_Thumb_01_Geo L_Hand_Geo; //parent together;
+// Result: L_Thumb_01_Geo // 
+parent R_Thumb_01_Geo R_Hand_Geo; //parent together;
+// Result: R_Thumb_01_Geo // 
+parent L_fingerOne_02_Geo L_fingerOne_01_Geo; //parent together;
+// Result: L_fingerOne_02_Geo // 
+parent L_fingerTwo_02_Geo L_fingerTwo_01_Geo; //parent together;
+// Result: L_fingerTwo_02_Geo // 
+parent L_fingerOne_03_Geo L_fingerOne_03_Geo; //parent together;
+// Result: L_fingerOne_03_Geo // 
+parent L_fingerOne_03_Geo L_fingerOne_02_Geo; //parent together;
+// Result: L_fingerOne_03_Geo // 
+parent L_fingerTwo_03_Geo L_fingerTwo_02_Geo; //parent together;
+// Result: L_fingerTwo_03_Geo // 
+parent L_fingerOne_04_Feo L_fingerOne_03_Geo; //parent together;
+// Error: line 1: No object matches name: L_fingerOne_04_Feo // 
+parent L_fingerOne_04_Geo L_fingerOne_03_Geo; //parent together;
+// Result: L_fingerOne_04_Geo // 
+select -r L_fingerTw0_04_geo ;
+rename "L_fingerTw0_04_geo" "L_fingerTwo_04_geo";
+// Result: L_fingerTwo_04_geo // 
+parent L_fingerTwo_04_Geo L_fingerTwo_03_Geo; //parent together;
+// Error: line 1: No object matches name: L_fingerTwo_04_Geo // 
+select -r L_fingerTwo_04_geo ;
+rename "L_fingerTwo_04_geo" "L_fingerTwo_04_Geo";
+// Result: L_fingerTwo_04_Geo // 
+parent L_fingerTwo_04_Geo L_fingerTwo_03_Geo; //parent together;
+// Result: L_fingerTwo_04_Geo // 
+parent L_fingerOne_05_Geo L_fingerOne_04_Geo; //parent together;
+// Result: L_fingerOne_05_Geo // 
+parent L_fingerTwo_05_Geo L_fingerTwo_04_Geo; //parent together;
+// Result: L_fingerTwo_05_Geo // 
+parent R_fingerOne_02_Geo R_fingerOne_01_Geo; //parent together;
+// Result: R_fingerOne_02_Geo // 
+parent R_fingerOne_03_Geo R_fingerOne_02_Geo; //parent together;
+// Result: R_fingerOne_03_Geo // 
+parent R_ginerOne_04_Geo R_fingerOne_03_Geo; //parent together;
+// Error: line 1: No object matches name: R_ginerOne_04_Geo // 
+parent R_fingerOne_04_Geo R_fingerOne_03_Geo; //parent together;
+// Result: R_fingerOne_04_Geo // 
+parent R_fingerOne_05_Geo R_fingerOne_04_Geo; //parent together;
+// Result: R_fingerOne_05_Geo // 
+parent R_fingerTwo_02_Geo R_gingerTwo_01_Geo; //parent together;
+// Error: line 1: No object matches name: R_gingerTwo_01_Geo // 
+parent R_fingerTwo_04_Geo R_fingerTwo_01_Geo; //parent together;
+// Result: R_fingerTwo_04_Geo // 
+parent R_fingerTwo_05_Geo R_fingerTwo_04_Geo; //parent together;
+// Result: R_fingerTwo_05_Geo // 
+parent R_fingerTwo_03_Geo R_fingerTwo_01_Geo; //parent together;
+// Result: R_fingerTwo_03_Geo // 
+select -r R_fingerTwo_03_Geo ;
+parent R_fingerTwo_03_Geo R_fingerTwo_01_Geo ;
+// Warning: line 1: Object, 'R_fingerTwo_03_Geo', skipped. It is already a child of the parent, 'R_fingerTwo_01_Geo'. // 
+parent R_fingerTwo_04_Geo R_fingerTwo_03_Geo ;
+// Result: R_fingerTwo_04_Geo // 
+select -r R_fingerTwo_02_Geo ;
+parent R_fingerTwo_02_Geo R_fingerTwo_01_Geo ;
+// Result: R_fingerTwo_02_Geo // 
+select -r R_fingerTwo_03_Geo ;
+parent R_fingerTwo_03_Geo R_fingerTwo_02_Geo ;
+// Result: R_fingerTwo_03_Geo // 
+parent R_Thumb_02_Geo R_Thumb_02_Geo; //parent together;
+// Result: R_Thumb_02_Geo // 
+parent R_Thumb_02_Geo R_Thumb_01_Geo; //parent together;
+// Result: R_Thumb_02_Geo // 
+parent R_Thumb_03_Geo R_Thumb_02_Geo; //parent together;
+// Result: R_Thumb_03_Geo // 
+parent R_Thumb_04_Geo R_Thumb_03_Geo; //parent together;
+// Result: R_Thumb_04_Geo // 
+parent R_Thumb_05_Geo R_Thumb_05_Geo; //parent together;
+// Result: R_Thumb_05_Geo // 
+parent R_Thumb_06_Geo R_Thumb_05_Geo; //parent together;
+// Result: R_Thumb_06_Geo // 
+parent L_Thumb_02_Geo L_Thumb_01_Geo; //parent together;
+// Result: L_Thumb_02_Geo // 
+parent L_Thumb_03_Geo L_Thumb_02_Geo; //parent together
+parent L_Thumb_04_Geo L_Thumb_03_Geo; //parent together
+parent L_Thumb_05_Geo L_Thumb_04_Geo; //parent together
+parent L_Thumb_06_Geo L_Thumb_05_Geo; //parent together;
+// Result: L_Thumb_06_Geo // 
+select -r Head_Geo ;
+select -r Neck_Geo ;
+select -r Torso_Geo ;
+select -r Stomach_Geo ;
+select -r Bottom_Geo ;
+select -r R_Leg_01_Geo ;
+select -r R_Leg_02_Geo ;
+select -r R_Leg_03_Geo ;
+select -r R_Leg_04_Geo ;
+select -r R_Leg_05_Geo ;
+select -r R_Feet_01_Geo ;
+select -r R_Feet_02_Geo ;
+select -r L_Leg_01_Geo ;
+select -r L_Leg_02_Geo ;
+select -r L_Leg_03_Geo ;
+select -r L_Leg_04_Geo ;
+select -r L_Leg_05_Geo ;
+select -r L_Feet_01_Geo ;
+select -r L_Feet_02_Geo ;
+select -r R_Shoulder_Geo ;
+select -r R_Arm_01_Geo ;
+select -r R_Arm_02_Geo ;
+select -r R_Arm_03_Geo ;
+select -r R_Arm_04_Geo ;
+select -r R_Wrist_Geo ;
+select -r R_Hand_Geo ;
+select -r R_fingerOne_01_Geo ;
+select -r R_fingerOne_02_Geo ;
+select -r R_fingerOne_03_Geo ;
+select -r R_fingerOne_04_Geo ;
+select -r R_fingerOne_05_Geo ;
+select -r R_fingerTwo_01_Geo ;
+select -r R_fingerTwo_02_Geo ;
+select -r R_fingerTwo_03_Geo ;
+select -r R_fingerTwo_04_Geo ;
+select -r R_fingerTwo_05_Geo ;
+select -r R_Thumb_01_Geo ;
+select -r R_Thumb_02_Geo ;
+select -r R_Thumb_03_Geo ;
+select -r R_Thumb_04_Geo ;
+select -r R_Thumb_05_Geo ;
+select -r R_Thumb_06_Geo ;
+select -r L_Shoulder_Geo ;
+select -r L_Arm_01_Geo ;
+select -r L_Arm_02_Geo ;
+select -r L_Arm_03_Geo ;
+select -r L_Arm_04_Geo ;
+select -r L_Wrist_Geo ;
+select -r L_Hand_Geo ;
+select -r L_fingerOne_01_Geo ;
+select -r L_fingerOne_02_Geo ;
+select -r L_fingerOne_03_Geo ;
+select -r L_fingerOne_04_Geo ;
+select -r L_fingerOne_05_Geo ;
+select -r L_fingerTwo_01_Geo ;
+select -r L_fingerTwo_02_Geo ;
+select -r L_fingerTwo_03_Geo ;
+select -r L_fingerTwo_04_Geo ;
+select -r L_fingerTwo_05_Geo ;
+select -r L_Thumb_01_Geo ;
+select -r L_Thumb_02_Geo ;
+select -r L_Thumb_03_Geo ;
+select -r L_Thumb_04_Geo ;
+select -r L_Thumb_05_Geo ;
+select -r L_Thumb_06_Geo ;
