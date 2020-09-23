@@ -1,0 +1,127 @@
+sphere -p 0 0 0 -ax 0 1 0 -ssw 0 -esw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -nsp 4 -ch 1;objectMoveCommand;
+setAttr "nurbsSphere1.translateX" 0;
+expression -s "nurbsSphere1.translateX = time;"  -o nurbsSphere1 -ae 1 -uc all ;
+// Result: expression1 // 
+// Press the ESC key to stop playback. // 
+currentTime 48 ;
+if(3 == 4) print "Hello";
+if(4 ==44) print "Hello";
+if(4 == 4) print "Hello";
+Helloif(4 == 4) print "Hey you, you didn't work hard. Oh Alex, you're in so trouble man.";
+Hey you, you didn't work hard. Oh Alex, you're in so trouble man.// Press the ESC key to stop playback. // 
+currentTime 76 ;
+sphere -p 0 0 0 -ax 0 1 0 -ssw 0 -esw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -nsp 4 -ch 1;objectMoveCommand;
+select -r nurbsSphere2 ;
+rename "nurbsSphere2" "mysphere";
+// Result: mysphere // 
+// Error: file: C:/Program Files/Autodesk/Maya2019/scripts/others/dynAddAttrWin.mel line 1010: Must specify an attribute name. // 
+addAttr -ln "revolutions"  -at double  -dv 0 |mysphere;
+setAttr -e-keyable true |mysphere.revolutions;
+expression -s "mysphere.rotateY = mysphere.revolutions * 360;"  -o mysphere -ae 1 -uc all ;
+// Result: expression2 // 
+select -addFirst expression2 ;
+setAttr "mysphere.rotateY" 05;
+// Error: line 1: setAttr: The attribute 'mysphere.rotateY' is locked or connected and cannot be modified. // 
+setAttr "mysphere.rotateY" 5;
+// Error: line 1: setAttr: The attribute 'mysphere.rotateY' is locked or connected and cannot be modified. // 
+setAttr "mysphere.revolutions" 0;
+setAttr "mysphere.revolutions" 5;
+setAttr "mysphere.revolutions" 1;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere1 // 
+select -r pSphere1 ;
+sphere -p 0 0 0 -ax 0 1 0 -ssw 0 -esw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -nsp 4 -ch 1;objectMoveCommand;
+select -r nurbsSphere2 ;
+select -r nurbsSphere2 ;
+select -r nurbsSphere2 ;
+rename "nurbsSphere2" "mysphere2";
+// Result: mysphere2 // 
+expression -s "mysphere2.rotateY = (mysphere.revolutions * 360) -45;"  -o mysphere2 -ae 1 -uc all ;
+// Result: expression3 // 
+parent;
+// Error: line 0: Not enough objects or values. // 
+print (5 + 3 - 4 * 5 / 4);
+3if ( 4 == 4) print "What!";
+What!if(3 == 4) print "no";
+if( 4 == 4 ) print "okay";
+okayprint ((2 + 4) * 4);
+24print ((30 - 2) / 5);
+5float $xval = time;
+// Error: float $xval = time; // 
+// Error: Line 1.19: Invalid use of Maya object "time". // 
+float $mysphere = time;
+// Error: float $mysphere = time; // 
+// Error: Line 1.23: Invalid use of Maya object "time". // 
+float $mysphere;
+float $val;
+$val = sin($val);
+// Result: 0 // 
+translateX = $xval;
+translateY = $yval;
+// Error: translateX = $xval;
+ // 
+// Error: Line 1.19: Invalid use of Maya object "translateX". // 
+// Error: translateY = $yval; // 
+// Error: Line 2.19: "$yval" is an undeclared variable. // 
+$rotation_value = 4.0;
+// Result: 4 // 
+$rotation = 4.0;
+// Result: 4 // 
+$rotation = $rotation * 2;
+// Result: 8 // 
+$rotation = $rotation * 5;
+// Result: 40 // 
+$rotation = $rotation + 30;
+// Result: 70 // 
+$rotation = $rotation + 1;
+// Result: 71 // 
+$rotation = $rotation - 1;
+// Result: 70 // 
+int $number_of_spheres;
+int $number;
+int #num = 4;
+// Error: int #num = 4; // 
+// Error: Line 1.5: Syntax error // 
+int #num_oranges = 4;
+// Error: int #num_oranges = 4; // 
+// Error: Line 1.5: Syntax error // 
+int #num_oranges = $num_oranges 4;
+// Error: int #num_oranges = $num_oranges 4; // 
+// Error: Line 1.5: Syntax error // 
+int #num_oranges = $num_oranges * 4;
+// Error: int #num_oranges = $num_oranges * 4; // 
+// Error: Line 1.5: Syntax error // 
+string $my_name = "Mark Wilkins";
+// Result: Mark Wilkins // 
+string $hello = "Shoo!";
+// Result: Shoo! // 
+string $name = "Mark";
+// Result: Mark // 
+// Warning: file: C:/Program Files/Autodesk/Maya2019/scripts/others/doSetKeyframeArgList.mel line 561: No objects selected to set keys // 
+string $my_name = $first_name + " " + $last_name;
+// Error: string $my_name = $first_name + " " + $last_name; // 
+// Error: Line 1.31: "$first_name" is an undeclared variable. // 
+// Error: string $my_name = $first_name + " " + $last_name; // 
+// Error: Line 1.49: "$last_name" is an undeclared variable. // 
+string $first_name = "Mark";
+string $last_name = "Wilkins";
+string $my_name = $first_name + " " + $last_name;
+// Warning: string $my_name = $first_name + " " + $last_name; // 
+// Warning: Line 3.49 : Redeclaration of variable "$my_name" shadows previous declaration at line 1. Previous value will be overwritten by explicit initializer. // 
+// Result: Mark Wilkins // 
+// Warning: file: C:/Program Files/Autodesk/Maya2019/scripts/others/doSetKeyframeArgList.mel line 561: No objects selected to set keys // 
+string $first = "Sonny";
+string $last = "Blunt";
+string $my_name = $first + " " + $last;
+// Warning: string $my_name = $first + " " + $last; // 
+// Warning: Line 3.39 : Redeclaration of variable "$my_name" shadows previous declaration at line 1. Previous value will be overwritten by explicit initializer. // 
+// Result: Sonny Blunt // 
+string $first = "Boo";
+string $last = "Stupid";
+string $name = $last + " " + $first;
+// Warning: string $name = $last + " " + $first; // 
+// Warning: Line 3.36 : Redeclaration of variable "$name" shadows previous declaration at line 1. Previous value will be overwritten by explicit initializer. // 
+// Result: Stupid Boo // 
+string "testing \n 1 2 3";
+// Error: string "testing \n 1 2 3"; // 
+// Error: Line 1.25: Syntax error // 
