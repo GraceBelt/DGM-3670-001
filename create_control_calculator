@@ -1,23 +1,30 @@
-CreatePolygonSphere; //Sum
-CreatePolygonSphere; //Divide
-CreatePolygonSphere; //Mult
-CreatePolygonSphere; //Sub;
-polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
-// Result: pSphere1 polySphere1 // 
-polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
-// Result: pSphere2 polySphere2 // 
-polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
-// Result: pSphere3 polySphere3 // 
-polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
-// Result: pSphere4 polySphere4 // 
-rename "pSphere1" "Sum";
-rename "pSphere2" "Divide";
-rename "pSphere3" "Mult";
-rename "pSphere4" "Sub";
-// Result: Sub // 
-//Array 
-string $names = ["Sum", "Divide", "Mult", "Sub"];
-print $names;
-// Error: string $names = ["Sum", "Divide", "Mult", "Sub"];
+print (5 + 3);
+8print (9 - 2);
+7print ( 7 / 3 );
+2print (7 * 3);
+21print ((4 + 3) * 9);
+63print ((12 /3 ) * 2);
+8print ((100 / 2) - 3);
+47if ((44 == 44)) print "Hello 44"; //It prints Hello 44 because they are the same number.;
+Hello 44if (( 3 == 44)) print "blank"; //It prints * blank * because they are not the same number.;
+if ((7 < 2) && (3 < 8))
+{
+        print "True";
+};
+print ( 3 > 2 );
+1print ( 3 < 2 );
+0int $Ally = 3;
+while ($Ally < 100)
+{
+    $Ally = $Ally * 3;
+    print ("$Ally is equal to" + $Ally  + "what";
+};
+// Error:     print ("$Ally is equal to" + $Ally  + "what";
  // 
-// Error: Line 2.17: Syntax error // 
+// Error: Line 5.49: Syntax error // 
+int $Ally = 3;
+while ($Ally < 100)
+{
+    $Ally = $Ally * 3;
+ 
+};
