@@ -1,0 +1,336 @@
+CreatePolygonSphere; //Head
+CreatePolygonSphere; //Neck
+CreatePolygonSphere; //Torso
+CreatePolygonSphere; //Left Shoulder
+CreatePolygonSphere; //Right Shoulder
+CreatePolygonCube; //Stomach
+CreatePolygonSphere; //Left Leg
+CreatePolygonSphere; //Right Leg;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere1 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere2 polySphere2 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere3 polySphere3 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere4 polySphere4 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere5 polySphere5 // 
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube1 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere6 polySphere6 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere7 polySphere7 // 
+rename "pSphere1" "Head_Geo"; //Head
+rename "pSphere2" "Neck_Geo"; //Neck
+rename "pSphere3" "Torso_Geo"; //Torso
+rename "pSphere4" "Right_Shoulder_Geo"; //Right Shoulder
+rename "pSphere5" "Left_Shoulder_Geo"; //Left Shoulder
+rename "pCube1" "Stomach_Geo"; //Stomach
+rename "pSphere6" "Left_Leg_Geo_01"; //Left Leg
+rename "pSphere7" "Right_Leg_Geo_01"; //Right Leg;
+// Result: Right_Leg_Geo_01 // 
+select -r Head_Geo ;
+move -r 0 9.119044 0 ;
+select -r Neck_Geo ;
+move -r 0 8.099856 0 ;
+select -r Left_Leg_Geo_01 ;
+move -r 0 7.000207 0 ;
+// Undo: move -r 0 7.000207 0  // 
+select -r Torso_Geo ;
+move -r 0 7.536621 0 ;
+scale -r 3.144444 1 1 ;
+select -r Right_Shoulder_Geo ;
+move -r 0 7.563442 0 ;
+move -r -2.9771 0 0 ;
+select -r Left_Shoulder_Geo ;
+move -r 0 7.617084 0 ;
+move -r 2.9771 0 0 ;
+select -r Stomach_Geo ;
+move -r 0 3.862183 0 ;
+scale -r 1 3.733333 1 ;
+scale -r 3.361111 1 1 ;
+move -r 0 1.180112 0 ;
+select -r Left_Leg_Geo_01 ;
+move -r 0 3.057562 0 ;
+move -r 1.636064 0 0 ;
+select -r Right_Leg_Geo_01 ;
+move -r 0 2.896637 0 ;
+move -r -1.046008 0 0 ;
+move -r 0 0.134104 0 ;
+move -r -0.509594 0 0 ;
+select -tgl Left_Leg_Geo_01 ;
+select -r Right_Leg_Geo_01 ;
+move -r 0.590056 0 0 ;
+select -r Left_Leg_Geo_01 ;
+move -r -0.616876 0 0 ;
+select -r Right_Leg_Geo_01 ;
+move -r -0.0536414 0 0 ;
+CreatePolygonCube; //Right Arm
+CreatePolygonCube; //Left Arm;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube2 // 
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube2 polyCube3 // 
+rename "pCube1" "Right_Arm_Geo_01"; //Right Arm
+rename "pCube2" "Left_Arm_Geo_02"; //Left Arm;
+// Result: Left_Arm_Geo_02 // 
+move -r 0 6.329689 0 ;
+move -r 3.057562 0 0 ;
+move -r 0 0.37549 0 ;
+select -r Right_Arm_Geo_01 ;
+move -r 0 6.463793 0 ;
+move -r -2.950279 0 0 ;
+move -r 0 0.268207 0 ;
+select -tgl Left_Arm_Geo_02 ;
+scale -r 1 2.961111 1 ;
+scale -r 1 1.283333 1 ;
+move -r 0 -0.831442 0 ;
+scale -r 0.555556 1 1 ;
+select -r Left_Arm_Geo_02 ;
+CreatePolygonSphere; //Right Elbow
+CreatePolygonSphere; //Left Elbow;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere8 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere2 polySphere9 // 
+select -r pSphere2 pSphere1 ;
+scale -r 0.581907 0.581907 0.581907 ;
+select -r pSphere1 ;
+rename "pSphere1" "Right_Arm_Geo_02"; //Right Elbow
+rename "pSphere2" "Left_Arm_Geo_02"; //Left Elbow;
+// Result: Left_Arm_Geo_03 // 
+move -r -3.030741 0 0 ;
+move -r 0 3.781721 0 ;
+move -r 0.0804622 0 0 ;
+select -r Left_Arm_Geo_03 ;
+move -r 0 3.808542 0 ;
+move -r 3.057562 0 0 ;
+select -r Right_Arm_Geo_01 ;
+select -r Left_Arm_Geo_03 ;
+CreatePolygonCube; //Right Arm
+CreatePolygonCube; //Left Arm;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube4 // 
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube2 polyCube5 // 
+rename "pCube1" "Right_Arm_Geo_03"; //Right Arm
+rename "pCube2" "Left_Arm_Geo_03"; //Left Arm;
+// Result: Left_Arm_Geo_04 // 
+move -r 0 3.138024 0 ;
+move -r 3.057562 0 0 ;
+move -r 0 0.107283 0 ;
+select -r Right_Arm_Geo_03 ;
+move -r 0 3.567155 0 ;
+move -r -2.923458 0 0 ;
+move -r 0 -0.37549 0 ;
+move -r -0.0268207 0 0 ;
+select -tgl Left_Arm_Geo_04 ;
+scale -r 1 3.144444 1 ;
+move -r 0 -1.046008 0 ;
+scale -r 0.883333 1 1 ;
+// Undo: scale -r 0.883333 1 1  // 
+select -cl  ;
+select -r Left_Arm_Geo_04 ;
+select -r Right_Arm_Geo_03 ;
+select -r Left_Arm_Geo_04 ;
+rename "Left_Arm_Geo_04" "Left_Arm_Geo_03"; //Left Arm;
+// Result: Left_Arm_Geo_04 // 
+select -r Left_Arm_Geo_03 ;
+select -r Left_Arm_Geo_02 ;
+select -r Left_Shoulder_Geo ;
+select -r Left_Arm_Geo_02 ;
+rename "Left_Arm_Geo_02" "Left_Arm_Geo_01"; //Left Arm;
+// Result: Left_Arm_Geo_01 // 
+rename "Left_Arm_Geo_03" "Left_Arm_Geo_02"; //Left Arm;
+// Result: Left_Arm_Geo_02 // 
+rename "Left_Arm_Geo_04" "Left_Arm_Geo_03"; //Left Arm;
+// Result: Left_Arm_Geo_03 // 
+CreatePolygonSphere; //Right Arm
+CreatePolygonSphere; //Left Arm;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere10 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere2 polySphere11 // 
+select -r pSphere2 pSphere1 ;
+scale -r 0.860636 0.860636 0.860636 ;
+select -r pSphere1 ;
+rename "pSphere1" "Left_Arm_Geo_04"; //Left Arm
+rename "pSphere2" "Right_Arm_Geo_04"; //Right Arm;
+// Result: Right_Arm_Geo_04 // 
+move -r 3.057562 0 0 ;
+move -r 0 0.885084 0 ;
+select -r Right_Arm_Geo_04 ;
+move -r -2.950279 0 0 ;
+move -r 0 0.858263 0 ;
+CreatePolygonCube; //Right Leg
+CreatePolygonCube; //Left Leg;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube6 // 
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube2 polyCube7 // 
+select -r Left_Leg_Geo_01 ;
+rename "pCube1" "Right_Leg_Geo_02"; //Right Leg
+rename "pCube2" "Left_Leg_Geo_02"; //Left Leg;
+// Result: Left_Leg_Geo_02 // 
+select -r Left_Leg_Geo_02 ;
+select -r Left_Leg_Geo_02 Right_Leg_Geo_02 ;
+scale -r 1.247759 1.247759 1.247759 ;
+select -r Right_Leg_Geo_02 ;
+move -r 0 2.011554 0 ;
+move -r -0.992367 0 0 ;
+move -r 0 0.187745 0 ;
+select -r Left_Leg_Geo_02 ;
+move -r 0 2.199299 0 ;
+move -r 1.046008 0 0 ;
+select -tgl Right_Leg_Geo_02 ;
+scale -r 1 3.238889 1 ;
+move -r 0 -1.475139 0 ;
+select -r Left_Leg_Geo_02 ;
+CreatePolygonSphere; //Left Leg
+CreatePolygonSphere; //Right Leg;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere12 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere2 polySphere13 // 
+rename "pSphere1" "Left_Leg_Geo_03"; //Left Leg
+rename "pSphere2" "Right_Leg_Geo_03"; //Right Leg;
+// Result: Right_Leg_Geo_03 // 
+move -r 0.992367 0 0 ;
+move -r 0 -1.475139 0 ;
+select -r Left_Leg_Geo_03 ;
+move -r -0.992367 0 0 ;
+move -r 0 -1.528781 0 ;
+select -r Right_Leg_Geo_03 ;
+move -r 0 -0.160924 0 ;
+select -tgl Left_Leg_Geo_03 ;
+scale -r 0.814181 0.814181 0.814181 ;
+select -cl  ;
+select -r Left_Leg_Geo_03 ;
+move -r 1.984733 0 0 ;
+select -r Right_Leg_Geo_03 ;
+move -r -2.011554 0 0 ;
+move -r 0 0.187745 0 ;
+select -r Left_Leg_Geo_03 ;
+move -r 0 0.0268207 0 ;
+select -cl  ;
+CreatePolygonCube; //Right Leg
+CreatePolygonCube; //Left Leg;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube8 // 
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube2 polyCube9 // 
+rename "pCube2" "Left_Leg_Geo_04"; //Left Leg
+rename "pCube1" "Right_Leg-Geo_04"; //Right Leg;
+// Warning: line 2: New name contains invalid characters. Illegal characters were converted to "_". // 
+// Result: Right_Leg_Geo_04 // 
+move -r 0 -3.164845 0 ;
+move -r 0.992367 0 0 ;
+move -r 0 0.938725 0 ;
+move -r 0.0536414 0 0 ;
+select -r Right_Leg_Geo_04 ;
+move -r 0 -2.199299 0 ;
+move -r -1.046008 0 0 ;
+select -tgl Left_Leg_Geo_04 ;
+scale -r 1.216667 1 1 ;
+move -r 0 0.134104 0 ;
+scale -r 1 3.566667 1 ;
+move -r 0 -1.046008 0 ;
+select -r Left_Leg_Geo_04 ;
+CreatePolygonSphere; //Right Ankle
+CreatePolygonSphere; //Left Ankle;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere14 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere2 polySphere15 // 
+rename "pSphere1" "Left_Leg_Geo_05"; //Left Leg
+rename "pSphere2" "Right_Leg_Geo_05"; //Right Leg;
+// Result: Right_Leg_Geo_05 // 
+move -r 0 -5.501456 0 ;
+move -r -1.027744 0 0 ;
+move -r 0 0.604556 0 ;
+select -r Left_Leg_Geo_05 ;
+move -r 0 -4.957356 0 ;
+move -r 1.057972 0 0 ;
+select -r Left_Leg_Geo_05 Right_Leg_Geo_05 ;
+scale -r 0.790576 0.790576 0.790576 ;
+select -cl  ;
+CreatePolygonCube; //Right Feet
+CreatePolygonCube; //Left Feet;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube10 // 
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube2 polyCube11 // 
+select -r pCube1 ;
+move -r 0 -4.960706 0 ;
+rename "pCube1" "Right_Feet_Geo_01"; //Right Feet
+rename "pCube2" "Left_Feet_Geo_01"; //Left Feet;
+// Result: Left_Feet_Geo_01 // 
+move -r -0.989824 0 0 ;
+select -r Right_Leg_Geo_01 ;
+select -r Left_Feet_Geo_01 ;
+select -r Right_Feet_Geo_01 ;
+move -r 0 -0.207698 0 ;
+move -r -0.0923103 0 0 ;
+scale -r 1.377778 1 1 ;
+move -r 0.0692327 0 0 ;
+select -r Left_Feet_Geo_01 ;
+move -r 0 -5.146298 0 ;
+move -r 1.061568 0 0 ;
+scale -r 1.366667 1 1 ;
+select -tgl Right_Feet_Geo_01 ;
+move -r 0 0 1.317147 ;
+move -r 0 0 -0.0333696 ;
+hilite Left_Feet_Geo_01 Right_Feet_Geo_01 ;
+hilite -u Left_Feet_Geo_01 Right_Feet_Geo_01 ;
+select -r Left_Feet_Geo_01 Right_Feet_Geo_01 ;
+select -r Left_Feet_Geo_01.e[1] ;
+select -tgl Right_Feet_Geo_01 ;
+select -d Left_Feet_Geo_01.e[1] ;
+select -add Left_Feet_Geo_01.e[1] ;
+select -tgl Right_Feet_Geo_01.e[1] ;
+move -r 0 -0.638817 0 ;
+select -d Right_Feet_Geo_01.e[1] ;
+select -cl  ;
+CreatePolygonCube; //Right Feet
+CreatePolygonCube; //Left Feet;
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube1 polyCube12 // 
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+// Result: pCube2 polyCube13 // 
+rename "pCube1" "Right_Feet_Geo_02"; //Right Feet
+rename "pCube2" "Left_Feet_Geo_02"; //Left Feet;
+// Result: Left_Feet_Geo_02 // 
+select -r Right_Feet_Geo_02 ;
+move -r -0.94618 0 0 ;
+move -r 0 -5.146298 0 ;
+select -r Left_Feet_Geo_02 ;
+move -r 0 -5.123221 0 ;
+move -r 1.084646 0 0 ;
+select -r Left_Feet_Geo_02 Right_Feet_Geo_02 ;
+move -r 0 0 2.457525 ;
+move -r 0 0 -0.131305 ;
+scale -r 1.334651 1 1 ;
+select -r Right_Feet_Geo_02 ;
+move -r -0.0366873 0 0 ;
+select -r Left_Feet_Geo_02 ;
+move -r -0.0549279 0 0 ;
+select -tgl Right_Feet_Geo_02 ;
+move -r 0 -0.0319051 0 ;
+scale -r 1 0.400588 1 ;
+scale -r 1 0.938424 1 ;
+move -r 0 -0.341975 0 ;
+move -r 0 0.0485474 0 ;
+select -cl  ;
+CreatePolygonSphere; //Right Wrist
+CreatePolygonSphere; //Left Wrist;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere1 polySphere16 // 
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: pSphere2 polySphere17 // 
+rename "pSphere1" "Left_Wrist_Geo"; //Left Wrist
+rename "pSphere2" "Right_Wrist_Geo"; //Right Wrist;
+// Result: Right_Wrist_Geo // 
+select -r Right_Wrist_Geo Left_Wrist_Geo ;
+scale -r 0.800142 0.800142 0.800142 ;
