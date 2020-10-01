@@ -1,0 +1,22 @@
+float $values [2, 4, 6, 8, 44];
+float $power [1, 3, 5, 7, 33];
+
+global proc float Addition ()
+{
+    
+}
+
+global proc float Subtraction ()
+{
+    
+}
+
+global proc float Multiplication ()
+{
+    
+}
+
+global proc float Division ()
+{
+    
+}
