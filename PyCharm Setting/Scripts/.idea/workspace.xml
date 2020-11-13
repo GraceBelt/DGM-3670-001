@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81f87933-672d-4f79-b954-fd4f80895138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/create_placement.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Renamer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,6 +28,11 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="ca.rightsomegoodgames.mayacharm.settings.MayaSdkConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Grace\Desktop\DGM\New Github\2020\Fall\3670 001\DGM-3670-001\PyCharm Setting\Scripts" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -58,7 +63,8 @@
       <workItem from="1604553115176" duration="384000" />
       <workItem from="1604553985312" duration="2419000" />
       <workItem from="1604557593615" duration="16000" />
-      <workItem from="1604557620213" duration="934000" />
+      <workItem from="1604557620213" duration="1354000" />
+      <workItem from="1605241187294" duration="2839000" />
     </task>
     <servers />
   </component>
