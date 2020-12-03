@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81f87933-672d-4f79-b954-fd4f80895138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Renamer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scratch_4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,6 +66,13 @@
       <workItem from="1604557593615" duration="16000" />
       <workItem from="1604557620213" duration="1354000" />
       <workItem from="1605241187294" duration="2839000" />
+      <workItem from="1605622471079" duration="129000" />
+      <workItem from="1607014365195" duration="445000" />
+      <workItem from="1607014816016" duration="714000" />
+      <workItem from="1607016421829" duration="1243000" />
+      <workItem from="1607018094913" duration="116000" />
+      <workItem from="1607018269148" duration="135000" />
+      <workItem from="1607018420983" duration="87000" />
     </task>
     <servers />
   </component>
