@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81f87933-672d-4f79-b954-fd4f80895138" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/UI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scratch_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PyCharm Setting.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Renamer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_placement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonSetup/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pythonSetup/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userSetup.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +81,7 @@
       <workItem from="1607018094913" duration="116000" />
       <workItem from="1607018269148" duration="135000" />
       <workItem from="1607018420983" duration="87000" />
+      <workItem from="1607018519017" duration="604000" />
     </task>
     <servers />
   </component>

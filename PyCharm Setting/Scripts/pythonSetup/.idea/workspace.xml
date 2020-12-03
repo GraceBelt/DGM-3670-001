@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b50dc38a-bf88-48ed-81e5-2387410cc79e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="81f87933-672d-4f79-b954-fd4f80895138" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,18 +11,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\Users\Grace\Desktop\DGM\New Github\2020\Fall\3670 001\DGM-3670-001\PyCharm Setting\Scripts\pythonSetup\.idea" />
-      </set>
-    </option>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="1l9nXAnUPsyo5uHAPcVvj3EJRgI" />
+  <component name="ProjectId" id="1jPtNRCOIHFDz0adPotksAArsjQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="ca.rightsomegoodgames.mayacharm.settings.MayaSdkConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Grace\Desktop\DGM\New Github\2020\Fall\3670 001\DGM-3670-001\PyCharm Setting\Scripts" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -43,12 +48,29 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b50dc38a-bf88-48ed-81e5-2387410cc79e" name="Default Changelist" comment="" />
-      <created>1607018211502</created>
+      <changelist id="81f87933-672d-4f79-b954-fd4f80895138" name="Default Changelist" comment="" />
+      <created>1603717513239</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1607018211502</updated>
-      <workItem from="1607018214090" duration="54000" />
+      <updated>1603717513239</updated>
+      <workItem from="1603717515988" duration="337000" />
+      <workItem from="1603761316355" duration="1265000" />
+      <workItem from="1603772147633" duration="13000" />
+      <workItem from="1604552947646" duration="164000" />
+      <workItem from="1604553115176" duration="384000" />
+      <workItem from="1604553985312" duration="2419000" />
+      <workItem from="1604557593615" duration="16000" />
+      <workItem from="1604557620213" duration="1354000" />
+      <workItem from="1605241187294" duration="2839000" />
+      <workItem from="1605622471079" duration="129000" />
+      <workItem from="1607014365195" duration="445000" />
+      <workItem from="1607014816016" duration="714000" />
+      <workItem from="1607016421829" duration="1243000" />
+      <workItem from="1607018094913" duration="116000" />
+      <workItem from="1607018269148" duration="135000" />
+      <workItem from="1607018420983" duration="87000" />
+      <workItem from="1607019248774" duration="186000" />
+      <workItem from="1607019435939" duration="68000" />
     </task>
     <servers />
   </component>
@@ -60,7 +82,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
